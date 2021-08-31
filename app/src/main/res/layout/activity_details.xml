@@ -72,8 +72,7 @@
         android:id="@+id/detailsArea"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:hint="this is america this is americ, this is america
-        this is americthis is america this is americ"
+        android:hint="Your country details here"
         android:textSize="20dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
@@ -84,7 +83,6 @@
         android:id="@+id/flagID"
         android:layout_width="110dp"
         android:layout_height="80dp"
-        android:background="@drawable/npl"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
         app:layout_constraintTop_toBottomOf="@+id/view"
@@ -130,7 +128,7 @@
         android:id="@+id/countryID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Phillipines"
+        android:hint="Country name"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="20dp"
@@ -205,6 +203,18 @@
         android:layout_marginStart="10dp"
         app:layout_constraintTop_toBottomOf="@+id/view2"
         app:layout_constraintStart_toEndOf="@+id/birds"/>
+
+    <TextView
+        android:id="@+id/returnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return Home"
+        android:textSize="25dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

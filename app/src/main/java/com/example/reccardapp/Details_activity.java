@@ -2,13 +2,15 @@ package com.example.reccardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Details_activity extends AppCompatActivity {
 
-    TextView countryID, areaID, religionID, populationID, detailsArea, animalsID, birdsID;
+    TextView countryID, areaID, religionID, populationID, detailsArea, animalsID, birdsID, returnHome;
     ImageView flagID;
 
     @Override
@@ -27,12 +29,23 @@ public class Details_activity extends AppCompatActivity {
 
         flagID.setImageResource(getIntent().getIntExtra("flag", 0));
         countryID.setText(getIntent().getStringExtra("countryname"));
-        countryID.setText(getIntent().getStringExtra("area"));
-        countryID.setText(getIntent().getStringExtra("religion"));
-        countryID.setText(getIntent().getStringExtra("population"));
-        countryID.setText(getIntent().getStringExtra("detailsarea"));
-        countryID.setText(getIntent().getStringExtra("animals"));
-        countryID.setText(getIntent().getStringExtra("birds"));
+        areaID.setText(getIntent().getStringExtra("area"));
+        religionID.setText(getIntent().getStringExtra("religion"));
+        populationID.setText(getIntent().getStringExtra("population"));
+        detailsArea.setText(getIntent().getStringExtra("detailsarea"));
+        animalsID.setText(getIntent().getStringExtra("animals"));
+        birdsID.setText(getIntent().getStringExtra("birds"));
+
+
+
+        returnHome = findViewById(R.id.returnHome);
+
+        returnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Details_activity.this, MainActivity.class));
+            }
+        });
 
     }
 }

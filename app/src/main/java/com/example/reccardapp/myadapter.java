@@ -15,14 +15,13 @@ public class myadapter extends RecyclerView.Adapter<myviewholder>
 {
    ArrayList<Model> data;
    ArrayList<Model2> data2;
-
    Context context;
-    private Object Model2;
 
     public myadapter(ArrayList<Model> data, ArrayList<Model2> data2,Context context)
     {
         this.data = data;
         this.context = context;
+        this.data2 = data2;
     }
 
     @NonNull
@@ -37,13 +36,8 @@ public class myadapter extends RecyclerView.Adapter<myviewholder>
     @Override
     public void onBindViewHolder(@NonNull myviewholder holder, int position)
     {
-        final Model2 temp = null;
+        final Model2 temp = data2.get(position);
 
-        try{
-             Model2 = data2.get(position);
-        }catch (NullPointerException ignored){
-            
-        }
 
        holder.coname.setText(data.get(position).getCountry());
        holder.code.setText(data.get(position).getCode());
